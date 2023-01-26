@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Secure Phone Number</title>
+  <script>
+
+
+
+    function updateDecode() {
+      var code = document.getElementById("decodeCode").value;
+      var codeConst = 23233108762328;
+      var number = Number(code) + codeConst
+      var length = Math.log(number) * Math.LOG10E + 1 | 0;
+      var output = number.toPrecision(length);
+
+      var outputString = output.toString()
+      var result = outputString.slice(-10)
+      document.getElementById("decodeOutput").innerHTML = result;
+    }
+
+    function updateEncode() {
+      var number = 3108762330
+      var code = 123
+      var randAppendage = Math.floor(Math.random() * 10)
+      var output = parseInt(randAppendage.toString() + r.toString(), 10)
+      var codeConst = output/2 + code
+    }
+
+  </script>
+</head>
+
+<body>
+  <h2> Decode </h2>
+  <form>
+    Code: <input type="password" id="decodeCode" oninput="updateDecode()" />
+    <br />
+  </form>
+  Output: <span id="decodeOutput"> none </span>
+
+  
+  <h2> Encode </h2>
+   <form>
+  Code: <input type="password" id="encodeCode" oninput="updateEncode()" /> 
+     <br />
+  Output: <input type="password" id="encodeOutput" oninput="updateEncode()" />
+     <br />
+     Const: <span id="decodeOutput"> none </span>
+  <br />
+  </form>
+  
+</body>
+</body>
+
+</html>
